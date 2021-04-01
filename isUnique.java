@@ -7,5 +7,11 @@ public static boolean isUnique(String s){
     return true;
 }
 
-// could've created an array of fixed size (128 = ASCII size)
-// could've used bit vector instead of an array to reduce space by 8
+public static boolean isUniqueEconomical(String s){
+    BitSet mySet = new BitSet(128);
+    for(char c : s.toCharArray()){
+        if(mySet.get((int) c) && 1 == 1) return false;
+        mySet.flip((int )c);
+    }
+    return true;
+}
