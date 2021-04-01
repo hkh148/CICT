@@ -8,7 +8,7 @@ public static boolean isUnique(String s){
 }
 
 public static boolean isUniqueEconomical(String s){
-    BitSet mySet = new BitSet(128);
+    BitSet mySet = new BitSet(128); // assuming we have an ASCII only string
     for(char c : s.toCharArray()){
         if(mySet.get((int) c) && 1 == 1) return false;
         mySet.flip((int )c);
